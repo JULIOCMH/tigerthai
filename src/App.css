@@ -1,0 +1,212 @@
+#root {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: 'oswald';
+}
+.container-boba{
+  display: grid;
+  height: 100vh;
+
+  justify-content: space-between;
+  align-items: stretch;
+  grid-template-areas: 'contenido imagen';
+  grid-template-columns: 2fr 1fr;
+}
+.imagen-boba{
+  grid-area: imagen;
+  overflow: hidden;
+  height: 100%;
+  position: relative;
+  box-shadow: -24px 0 50px rgba(0, 0, 0, 0.22), -8px 0 18px rgba(0, 0, 0, 0.12);
+}
+.imagen-boba .carousel-img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 5s ease-in-out;
+  opacity: 0;
+  display: block;
+  transform: scale(1.08) translateX(0);
+}
+.imagen-boba .carousel-img.active{
+  opacity: 1;
+}
+
+/* Efecto pan/zoom suave (Ken Burns) */
+.imagen-boba .carousel-img{
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+.imagen-boba .carousel-img.active{
+  /* Duración del pan: 5s por defecto (ajustar si cambias el interval en boba.jsx) */
+  animation: pan 8s ease-in-out forwards;
+}
+
+@keyframes pan{
+  0%{ transform: scale(1.08) translateX(0); }
+  50%{ transform: scale(1.08) translateX(-1.5%); }
+  100%{ transform: scale(1.08) translateX(0); }
+}
+.contenido-boba{
+  display: flex;
+  flex-direction: column;
+  grid-area: contenido;
+}
+.contenido-boba h1{
+  color: green;
+  text-align: start;
+  margin-left: 5rem;
+  font-size: 4rem;
+}
+.informacion-boba{
+  text-align: start;
+  margin-left: 3rem;
+  column-count: 2;
+  column-fill: balance;
+
+}
+.informacion-boba p{
+  font-size: 2rem;
+}
+
+/*. Noodles */
+
+
+.container-noodles{
+  display: grid;
+  height: 100vh;
+
+  justify-content: space-between;
+  align-items: stretch;
+  grid-template-areas: 'noodles rice imagen';
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.noodles{
+  grid-area: noodles;
+}
+
+.rice{
+  grid-area: rice;
+}
+.imagen-noodles{
+  grid-area: imagen;
+  overflow: hidden;
+  height: 100%;
+  position: relative;
+  box-shadow: -24px 0 50px rgba(0, 0, 0, 0.22), -8px 0 18px rgba(0, 0, 0, 0.12);
+}
+.imagen-noodles .carousel-img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 5s ease-in-out;
+  opacity: 0;
+  display: block;
+  transform: scale(1.08) translateX(0);
+}
+.imagen-noodles .carousel-img.active{
+  opacity: 1;
+}
+
+/* Efecto pan/zoom suave (Ken Burns) */
+.imagen-noodles .carousel-img{
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+.imagen-noodles .carousel-img.active{
+  /* Duración del pan: 5s por defecto (ajustar si cambias el interval en boba.jsx) */
+  animation: pan 8s ease-in-out forwards;
+}
+
+@keyframes pan{
+  0%{ transform: scale(1.08) translateX(0); }
+  50%{ transform: scale(1.08) translateX(-1.5%); }
+  100%{ transform: scale(1.08) translateX(0); }
+}
+
+.rice h1 , .noodles h1{
+  color: green;
+text-align: center;
+
+  font-size: 4rem;
+}
+
+
+/* Meal */
+
+
+.container-meal{
+  display: grid;
+  height: 100vh;
+overflow: hidden;
+  justify-content: space-between;
+  align-items: stretch;
+  grid-template-areas: 'bahn bao wings imagen';
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.bahn-mi{
+  grid-area: bahn;
+}
+
+.bao-buns{
+  grid-area: bao;
+}
+.wings{
+  grid-area: wings;
+}
+.imagen-meal{
+  grid-area: imagen;
+  overflow: hidden;
+  height: 100%;
+  position: relative;
+  box-shadow: -24px 0 50px rgba(0, 0, 0, 0.22), -8px 0 18px rgba(0, 0, 0, 0.12);
+}
+.imagen-meal .carousel-img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 5s ease-in-out;
+  opacity: 0;
+  display: block;
+  transform: scale(1.08) translateX(0);
+}
+.imagen-meal .carousel-img.active{
+  opacity: 1;
+}
+
+/* Efecto pan/zoom suave (Ken Burns) */
+.imagen-meal .carousel-img{
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+.imagen-meal .carousel-img.active{
+  /* Duración del pan: 5s por defecto (ajustar si cambias el interval en boba.jsx) */
+  animation: pan 8s ease-in-out forwards;
+}
+
+@keyframes pan{
+  0%{ transform: scale(1.08) translateX(0); }
+  50%{ transform: scale(1.08) translateX(-1.5%); }
+  100%{ transform: scale(1.08) translateX(0); }
+}
+
+.bahn-mi h1 , .bao-buns h1 , .wings h1{
+  color: green;
+text-align: center;
+
+  font-size: 4rem;
+}
+
+.bahn-mi p, .bao-buns p, .wings p{
+  padding: 1rem;
+}
+
